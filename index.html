@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devman | About me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0d0c22 50%, #1a1738 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+    body::-webkit-scrollbar-track {
+      background: rgba(25, 24, 56, 0.8);
+      border-radius: 10px;
+    }
+    body::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #9a6fff, #5e45c4);
+      border-radius: 10px;
+      transition: background 0.3s ease-in-out;
+    }
+    body::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(45deg, #b289ff, #7250e0);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      position: sticky;
+      top: 0;
+      background: rgba(13, 12, 34, 0.9);
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #9a6fff;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover {
+      color: #9a6fff;
+    }
+
+    nav .menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #9a6fff;
+      left: 50%;
+      bottom: -5px;
+      transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 4rem;
+      height: 100vh;
+      position: relative;
+    }
+
+    .hero .text {
+      flex: 1;
+      max-width: 50%;
+      animation: fadeInLeft 1.5s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin: 0.5rem 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero h1 span {
+      color: #9a6fff;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .hero .typing {
+      color: #9a6fff;
+      font-size: 2rem;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    .hero img {
+      max-width: 340px;
+      animation: fadeInRight 1.5s ease-in-out;
+      border-radius: 50%; 
+      border: 3px solid #9a6fff;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particles span {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #9a6fff;
+      border-radius: 50%;
+      animation: moveParticles 5s linear infinite;
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes moveParticles {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Devman.</div>
+    <div class="menu">
+      <a href="index.html">Home</a> 
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="text">
+      <h1>Hi There! 👋</h1>
+      <h1>I'm <span>Devman</span></h1>
+     <h1>A</h1> <p class="typing"></p>
+    </div>
+    <img src="devman.jpg" alt="Devman">
+  </section>
+
+  <div class="particles"></div>
+
+  <script>
+    const text = ['Developer'];
+    let index = 0;
+    let charIndex = 0;
+    const typingSpeed = 100;
+    const erasingSpeed = 50;
+    const delayBetweenWords = 1000;
+    const typingElement = document.querySelector('.typing');
+
+    function typeText() {
+      if (charIndex < text[index].length) {
+        typingElement.textContent += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, typingSpeed);
+      } else {
+        setTimeout(eraseText, delayBetweenWords);
+      }
+    }
+
+    function eraseText() {
+      if (charIndex > 0) {
+        typingElement.textContent = text[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, erasingSpeed);
+      } else {
+        index = (index + 1) % text.length;
+        setTimeout(typeText, typingSpeed);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', typeText);
+
+    const particlesContainer = document.querySelector('.particles');
+    const numParticles = 100;
+
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('span');
+      particle.style.left = Math.random() * 100 + 'vw';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      particle.style.animationDuration = Math.random() * 5 + 5 + 's';
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
