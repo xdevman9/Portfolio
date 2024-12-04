@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Devman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0d0c22 50%, #1a1738 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+    body::-webkit-scrollbar-track {
+      background: #1a1738;
+    }
+    body::-webkit-scrollbar-thumb {
+      background: #9a6fff;
+      border-radius: 5px;
+    }
+    body::-webkit-scrollbar-thumb:hover {
+      background: #b586ff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      position: sticky;
+      top: 0;
+      background: rgba(13, 12, 34, 0.9);
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #9a6fff;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover {
+      color: #9a6fff;
+    }
+
+    nav .menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #9a6fff;
+      left: 50%;
+      bottom: -5px;
+      transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .about {
+      padding: 3rem 4rem;
+    }
+
+    .about h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill {
+      background: #1a1738;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .progress-bar {
+      position: relative;
+      background: #2e2b5f;
+      height: 10px;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #9a6fff;
+      width: 0;
+      animation: progressAnimation 2s ease-in-out forwards;
+    }
+
+    @keyframes progressAnimation {
+      from {
+        width: 0;
+      }
+    }
+
+    .skill[data-skill="html"] .progress {
+      animation-delay: 0.2s;
+      width: 85%;
+    }
+
+    .skill[data-skill="css"] .progress {
+      animation-delay: 0.4s;
+      width: 10%;
+    }
+
+    .skill[data-skill="javascript"] .progress {
+      animation-delay: 0.6s;
+      width: 10%;
+    }
+
+    .skill[data-skill="python"] .progress {
+      animation-delay: 0.8s;
+      width: 40%;
+    }
+
+    .skill[data-skill="lua"] .progress {
+      animation-delay: 1s;
+      width: 25%;
+    }
+
+    /* Particles Styling */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Devman.</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="about">
+    <h1>About Me</h1>
+    <p>Hello! I'm <strong>Devman</strong>, I am a web developer. I like making proxies and Discord bots using Python. Here are my skills:</p>
+
+    <div class="skills">
+      <div class="skill" data-skill="html">
+        <h3>HTML</h3>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="skill" data-skill="css">
+        <h3>CSS</h3>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="skill" data-skill="javascript">
+        <h3>JavaScript</h3>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="skill" data-skill="python">
+        <h3>Python</h3>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+      <div class="skill" data-skill="lua">
+        <h3>Lua</h3>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <canvas></canvas>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+
+    function Particle(x, y, radius, color, velocity) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.velocity = velocity;
+
+      this.draw = () => {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      };
+
+      this.update = () => {
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+
+        if (this.y > canvas.height) this.y = 0;
+
+        this.draw();
+      };
+    }
+
+    function initParticles() {
+      for (let i = 0; i < 100; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const radius = Math.random() * 2 + 1;
+        const color = '#9a6fff';
+        const velocity = { x: 0, y: Math.random() * 0.5 + 0.2 };
+        particles.push(new Particle(x, y, radius, color, velocity));
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((particle) => particle.update());
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles.length = 0;
+      initParticles();
+    });
+  </script>
+</body>
+</html>
