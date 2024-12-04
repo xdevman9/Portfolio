@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Devman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0d0c22 50%, #1a1738 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+    body::-webkit-scrollbar-track {
+      background: #1a1738;
+    }
+    body::-webkit-scrollbar-thumb {
+      background-color: #9a6fff;
+      border-radius: 6px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      position: sticky;
+      top: 0;
+      background: rgba(13, 12, 34, 0.9);
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #9a6fff;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover {
+      color: #9a6fff;
+    }
+
+    nav .menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #9a6fff;
+      left: 50%;
+      bottom: -5px;
+      transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .projects {
+      padding: 3rem 4rem;
+    }
+
+    .projects h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #1a1738;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .project-card p {
+      color: #d9d9d9;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .project-card .github-button {
+      margin-top: 1rem;
+      text-decoration: none;
+      background: #333;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-card .github-button i {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .project-card .github-button:hover {
+      background: #444;
+      transform: translateY(-2px);
+    }
+
+    .project-card .github-button:hover i {
+      transform: rotate(360deg);
+    }
+
+    /* Particle Animation */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: #9a6fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(0.8);
+      }
+      50% {
+        transform: translateY(100vh) scale(1);
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Devman.</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="projects">
+    <h1>My Projects</h1>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Pblocker</h3>
+        <p>A fast proxy with many cool features, Games, apps and settings.</p>
+        <i class="fa-solid fa-code"></i> In Develope...
+      </div>
+      <div class="project-card">
+        <h3>PblockerGPT</h3>
+        <p>A Discord version AI bot made by Python using Gemini's API.</p>
+        <a href="https://github.com/" class="github-button" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+      <div class="project-card">
+        <h3>PbGames</h3>
+        <p>A normal game site with many games.</p>
+        <i class="fas fa-exclamation-triangle"></i> Coming soon.
+      </div>
+      <div class="project-card">
+        <h3>Portfolio</h3>
+        <p>My personal website.</p>
+        <a href="https://github.com/xdevman9/portfolio" class="github-button" target="_blank">
+          <i class="fab fa-github"></i> View on Github
+        </a>
+      </div>
+      <div class="project-card">
+        <h3>ShadowGPT</h3>
+        <p>An Ai chatbot, web version made by html/css/scss/js</p>
+        <i class="fas fa-exclamation-triangle"></i> Coming soon.
+      </div>
+      <div class="project-card">
+        <h3>TempMail</h3>
+        <p>A temp email generator that generates temp email, i use it for freedns</p>
+        <a href="https://github.com/xdevman9/TempMail" class="github-button" target="_blank">
+         <i class="fab fa-github"></i> View on Github
+        </a>
+      </div>
+      <div class="project-card">
+        <h3>Nugget</h3>
+        <p>Its not a website for free nugget, nugget is a uv based proxy with cool upcoming features and auto:blank.</p>
+        <a href="https://github.com/xdevman9/nugget-search" class="github-button" target="_blank">
+         <i class="fab fa-github"></i> View on Github
+        </a>
+      </div>
+      <div class="project-card">
+        <h3>Pbgg</h3>
+        <p>Pb gg is a website that has nowgg games its uv based</p>
+        <i class="fas fa-exclamation-triangle"></i> Coming soon.
+      </div>
+    </div>
+  </section>
+
+  <div class="particles">
+    <div class="particle" style="width: 10px; height: 10px; left: 10%; animation-duration: 6s;"></div>
+    <div class="particle" style="width: 15px; height: 15px; left: 25%; animation-duration: 4s;"></div>
+    <div class="particle" style="width: 8px; height: 8px; left: 40%; animation-duration: 5s;"></div>
+    <div class="particle" style="width: 12px; height: 12px; left: 60%; animation-duration: 7s;"></div>
+    <div class="particle" style="width: 20px; height: 20px; left: 75%; animation-duration: 8s;"></div>
+    <div class="particle" style="width: 5px; height: 5px; left: 90%; animation-duration: 3s;"></div>
+  </div>
+</body>
+</html>
