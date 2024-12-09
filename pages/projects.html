@@ -149,6 +149,35 @@
       transform: rotate(360deg);
     }
 
+    .project-card .site-button {
+      margin-top: 1rem;
+      text-decoration: none;
+      background: #333;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-card .site-button i {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .project-card .site-button:hover {
+      background: #444;
+      transform: translateY(-2px);
+    }
+
+    .project-card .site-button:hover i{
+      transform: rotate(360deg);
+    }
+
     /* Particle Animation */
     .particles {
       position: fixed;
@@ -203,9 +232,7 @@
       <div class="project-card">
         <h3>PblockerGPT</h3>
         <p>A Discord version AI bot made by Python using Gemini's API.</p>
-        <a href="https://github.com/" class="github-button" target="_blank">
-          <i class="fab fa-github"></i> View on GitHub
-        </a>
+        <i class="fa-solid fa-code"></i> In Develope...
       </div>
       <div class="project-card">
         <h3>PbGames</h3>
@@ -217,6 +244,9 @@
         <p>My personal website.</p>
         <a href="https://github.com/xdevman9/portfolio" class="github-button" target="_blank">
           <i class="fab fa-github"></i> View on Github
+        </a>
+        <a href="#" class="site-button" target="_blank">
+          <i class="fa-sloid fa-globe"></i>
         </a>
       </div>
       <div class="project-card">
@@ -230,6 +260,9 @@
         <a href="https://github.com/xdevman9/TempMail" class="github-button" target="_blank">
          <i class="fab fa-github"></i> View on Github
         </a>
+        <a href="https://tempmail.pb-celestial.site" class="site-button" target="_blank">
+          <i class="fa-solid fa-globe"></i> View Site
+        </a>
       </div>
       <div class="project-card">
         <h3>Nugget</h3>
@@ -240,8 +273,10 @@
       </div>
       <div class="project-card">
         <h3>Pbgg</h3>
-        <p>Pb gg is a website that has nowgg games its uv based</p>
-        <i class="fas fa-exclamation-triangle"></i> Coming soon.
+        <p>Pb gg is a website that has nowgg games its uv based <i class="fa-solid fa-exclamation-triangle"></i> Not OpenSource </p>
+        <a href="https://ngg-bypass.gotdns.ch" class="site-button" target="_blank">
+          <i class="fa-solid fa-globe"></i> View Site
+        </a>
       </div>
     </div>
   </section>
